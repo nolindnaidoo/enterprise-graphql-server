@@ -8,9 +8,7 @@
 
 ### Core Libraries
 
-Enterprise GraphQL Server is built with [Node](https://nodejs.org/en/), [GraphQL](https://graphql.org), [Express](https://expressjs.com), [Express-GraphQL](https://github.com/graphql/express-graphql). High-integrity Integration Testing with [SuperTest](https://github.com/visionmedia/supertest), [Mocha](https://mochajs.org/), and [Chai](https://www.chaijs.com/). Continuous Integration with [Travis-CI](https://travis-ci.com/) and [Github](https://github.com/).
-
-This project uses local mock data for rapid prototyping and experimenting so that you are not locked into a specific backend configuration.
+Enterprise GraphQL Server is built with [ES2021](https://javascript.christmas/2020/7) [Node 15](https://nodejs.org/en/), [GraphQL](https://graphql.org), [Express](https://expressjs.com), [Express-GraphQL](https://github.com/graphql/express-graphql). High-integrity Integration Testing with [SuperTest](https://github.com/visionmedia/supertest), [Mocha](https://mochajs.org/), and [Chai](https://www.chaijs.com/). Continuous Integration with [Travis-CI](https://travis-ci.com/) and [Github](https://github.com/).
 
 <h2 align="center">Quick Start</h2>
 
@@ -24,7 +22,7 @@ This project uses local mock data for rapid prototyping and experimenting so tha
 ## Environment
 
 - Install [NVM](https://github.com/nvm-sh/nvm) (Optional)
-- Install [Node](https://nodejs.org/en/)
+- Install [Node 15](https://nodejs.org/en/)
 - Install [YarnPKG](https://yarnpkg.com/en/docs/install)
 - Install [Git](https://git-scm.com/downloads) and run these commands to configure it:
   - `> git config --global user.name "{FULL_NAME}"`
@@ -33,6 +31,35 @@ This project uses local mock data for rapid prototyping and experimenting so tha
   - Refer to [Advanced Git Configuration](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) for additional information
 - Setup [SSH](https://help.github.com/articles/connecting-to-github-with-ssh/)
 - Clone Repository `git clone https://github.com/nolindnaidoo/enterprise-graphql-server.git`
+
+## Environment
+
+- This project uses local mock data for rapid prototyping and experimenting so that you are not locked into a specific backend host or configuration.
+
+- `"type": "module",` - It uses modules with import/export instead of CommonJS require.
+- `--experimental-specifier-resolution=node`
+
+## API Testing
+
+- [SuperTest](https://github.com/visionmedia/supertest) HTTP assertions made easy via superagent.
+- [Mocha](https://mochajs.org/) is a feature-rich JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun.
+- [Chai](https://www.chaijs.com/) is a BDD / TDD assertion library for [node](http://nodejs.org) and the browser that can be delightfully paired with any javascript testing framework.
+
+## Continuous Integration & Deployment
+
+The following links provide enhanced awareness throughout the Agile SDLC process. Save as bookmarks for rapid development.
+
+- [Branch Status](https://github.com/nolindnaidoo/enterprise-graphql-server/branches)
+- [Pull Request Status](https://github.com/nolindnaidoo/enterprise-graphql-server/pulls)
+- [TravisCI Repo Dashboard](https://travis-ci.org/github/nolindnaidoo/enterprise-graphql-server)
+
+## ESLint
+
+Enterprise React Components uses [Airbnb ESLint rules](https://github.com/airbnb/javascript) for lint/syntax errors, along with [Prettier](https://github.com/prettier/prettier) for automated formatting and lint error fixing.
+
+#### Exceptions
+
+- [comma-dangle](https://eslint.org/docs/rules/comma-dangle)
 
 ## Git
 
@@ -74,28 +101,6 @@ Staying up-to-date with the latest from `main` is beneficial to parallel develop
 - Resolve or reply to all Pull Request comments.
 - Use the Merge button on the Pull Request to merge back to main.
 - Once the test is successful and no further changes are needed for sign off delete the original feature branch.
-
-## API Testing
-
-- [SuperTest](https://github.com/visionmedia/supertest) HTTP assertions made easy via superagent.
-- [Mocha](https://mochajs.org/) is a feature-rich JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun.
-- [Chai](https://www.chaijs.com/) is a BDD / TDD assertion library for [node](http://nodejs.org) and the browser that can be delightfully paired with any javascript testing framework.
-
-## Continuous Integration & Deployment
-
-The following links provide enhanced awareness throughout the Agile SDLC process. Save as bookmarks for rapid development.
-
-- [Branch Status](https://github.com/nolindnaidoo/enterprise-graphql-server/branches)
-- [Pull Request Status](https://github.com/nolindnaidoo/enterprise-graphql-server/pulls)
-- [TravisCI Repo Dashboard](https://travis-ci.org/github/nolindnaidoo/enterprise-graphql-server)
-
-## ESLint
-
-Enterprise React Components uses [Airbnb ESLint rules](https://github.com/airbnb/javascript) for lint/syntax errors, along with [Prettier](https://github.com/prettier/prettier) for automated formatting and lint error fixing.
-
-#### Exceptions
-
-- [comma-dangle](https://eslint.org/docs/rules/comma-dangle)
 
 ## IDE's
 
