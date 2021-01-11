@@ -1,1 +1,138 @@
-# enterprise-graphql-server
+<div align="center">
+
+![GitHub package.json version](https://img.shields.io/github/package-json/v/nolindnaidoo/enterprise-graphql-server) ![Node](https://img.shields.io/badge/node%20-15-green.svg) ![Travis (.org)](https://img.shields.io/travis/nolindnaidoo/enterprise-graphql-server) ![GitHub repo size](https://img.shields.io/github/repo-size/nolindnaidoo/enterprise-graphql-server?color=g) ![GitHub](https://img.shields.io/github/license/nolindnaidoo/enterprise-graphql-server)
+
+</div>
+
+<h1 align="center">Enterprise GraphQL Server</h1>
+
+### Core Libraries
+
+Enterprise GraphQL Server is built with [Node](https://nodejs.org/en/), [GraphQL](https://graphql.org), [Express](https://expressjs.com), [Express-GraphQL](https://github.com/graphql/express-graphql). Integration Testing with [SuperTest](https://github.com/visionmedia/supertest), [Mocha](https://mochajs.org/), and [Chai](https://www.chaijs.com/). Seamless Continuous Integration with [Travis-CI](https://travis-ci.com/) and [Github](https://github.com/).
+
+<h2 align="center">Quick Start</h2>
+
+### Scripts
+
+- `yarn start` - Deploy development server
+- `yarn run build` - Deploy production server
+
+<h1 align="center">Development Setup</h1>
+
+## Environment
+
+- Install [NVM](https://github.com/nvm-sh/nvm) (Optional)
+- Install [Node](https://nodejs.org/en/)
+- Install [YarnPKG](https://yarnpkg.com/en/docs/install)
+- Install [Git](https://git-scm.com/downloads) and run these commands to configure it:
+  - `> git config --global user.name "{FULL_NAME}"`
+  - `> git config --global user.email {EMAIL}`
+  - `> git config --global core.autocrlf false`.
+  - Refer to [Advanced Git Configuration](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) for additional information
+- Setup [SSH](https://help.github.com/articles/connecting-to-github-with-ssh/)
+- Clone Repository `git clone https://github.com/nolindnaidoo/enterprise-graphql-server.git`
+
+## Git
+
+The Git Feature Branch Workflow is a composable workflow that can be leveraged by other high-level Git workflows. This project utilizes the [Github Flow](https://guides.github.com/introduction/flow/), which allows for fast-paced and high-quality parallel development.
+
+#### Github Flow:
+
+- Create the branch. Make sure it begins with the `feature/`, `hotfix/`, `bugfix/`, `semver/` prefix.
+- Add commits
+- Open a Pull Request
+- Review & Collaborate changes
+- Deploy and Test
+- Merge
+
+#### Merging from Master
+
+A best practice is to perform merging when the working tree is clean. Use caution, first commit any unfinished work still desired, or reset the Git working tree. Choose `> git stash` and save the working tree until ready. Alternatively, reset the working tree. `> git reset --hard`
+
+Staying up-to-date with the latest from `master` is beneficial to parallel development. Remote `master` represents the most stable and approved iteration of the product. In Parallel Development, updates to `master` may affect current implementation. Work with the latest from `master` by merging the latest from `master` into `feature/{name}` as frequently as possible, but only when necessary.
+
+#### Merging from Master Procedure
+
+- `> git reset --hard` or `> git stash`
+- `> git checkout master`
+- `> git pull`
+- `> git checkout "feature/{name}"`
+- `> git merge master`
+- No Conflicts: Auto-merge Successful
+- Conflicts: Resolve Conflicts and run:
+  - `> git add .`
+  - `> git commit -m "merge master, resolved conflicts"`
+  - `> git push`
+
+#### Merging to Master
+
+- Make sure your feature branch is not behind the master. You can view it from the [Branch Status](https://github.com/nolindnaidoo/enterprise-react-components/branches) view in the Behind/Ahead column.
+- Verify that your feature branch builds successfully on [TravisCI](https://travis-ci.org/github/nolindnaidoo/enterprise-react-components/branches).
+- Check your coverage against master. The Feature Branch should be greater than or equal to the master.
+- Resolve or reply to all Pull Request comments.
+- Use the Merge button on the Pull Request to merge back to master.
+- Once the test is successful and no further changes are needed for sign off delete the original feature branch.
+
+## API Testing
+
+- [SuperTest](https://github.com/visionmedia/supertest) HTTP assertions made easy via superagent.
+- [Mocha](https://mochajs.org/) is a feature-rich JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun.
+- [Chai](https://www.chaijs.com/) is a BDD / TDD assertion library for [node](http://nodejs.org) and the browser that can be delightfully paired with any javascript testing framework.
+
+## Continuous Integration & Deployment
+
+The following links provide enhanced awareness throughout the Agile SDLC process. Save as bookmarks for rapid development.
+
+- [Branch Status](https://github.com/nolindnaidoo/enterprise-graphql-server/branches)
+- [Pull Request Status](https://github.com/nolindnaidoo/enterprise-graphql-server/pulls)
+- [TravisCI Repo Dashboard](https://travis-ci.org/github/nolindnaidoo/enterprise-graphql-server)
+
+## ESLint
+
+Enterprise React Components uses [Airbnb ESLint rules](https://github.com/airbnb/javascript) for lint/syntax errors, along with [Prettier](https://github.com/prettier/prettier) for automated formatting and lint error fixing.
+
+#### Exceptions
+
+- [comma-dangle](https://eslint.org/docs/rules/comma-dangle)
+
+## IDE's
+
+Take advantage of advanced workflow features by using supported IDE's with the appropriate plugins.
+
+### Atom
+
+- Install [Atom](https://atom.io)
+- Install Packages
+  - atom-css-clean
+  - autoclose-html
+  - autocomplete-json
+  - autocomplete-modules
+  - busy-signal
+  - file-icons
+  - highlight-selected
+  - html-escaper
+  - intentions
+  - language-babel
+  - linter
+  - linter-eslint
+  - linter-htmlhint
+  - linter-ui-default
+  - markdown-preview-enhanced
+  - pigments
+  - prettier-atom
+  - sort-lines
+  - terminal-panel-uoa
+
+### Visual Studio Code
+
+- Install [Visual Studio Code](https://code.visualstudio.com)
+- Install Packages
+  - christian-kohler.path-intellisense
+  - dbaeumer.vscode-eslint
+  - donjayamanne.githistory
+  - emmanuelbeziat.vscode-great-icons
+  - esbenp.prettier-vscode
+  - formulahendry.auto-close-tag
+  - vstirbu.vscode-mermaid-preview
+  - wayou.vscode-todo-highlight
+  - zhuangtongfa.Material-theme

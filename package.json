@@ -1,0 +1,46 @@
+{
+  "name": "enterprise-graphql-sever",
+  "version": "1.0.0",
+  "author": "Nolin D Naidoo <nolinnaidoo77@gmail.com> (https://www.linkedin.com/in/nolindnaidoo/)",
+  "description": "An enterprise-class GraphQL server built using Node, Express, Express-GraphQL, and GraphQL.",
+  "keywords": [
+    "express-graphql",
+    "express",
+    "graphql",
+    "node"
+  ],
+  "private": false,
+  "license": "Unlicense",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nolindnaidoo/enterprise-graphql-server.git"
+  },
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint server type data --fix",
+    "test": "mocha",
+    "prebuild": "yarn && yarn run lint",
+    "build": "cross-env NODE_ENV=production node --experimental-specifier-resolution=node server/server.js",
+    "prestart": "yarn && yarn run lint",
+    "start": "cross-env NODE_ENV=development nodemon --experimental-specifier-resolution=node server/server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.4.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "supertest": "^6.0.1"
+  }
+}
