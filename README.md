@@ -8,7 +8,9 @@
 
 ### Core Libraries
 
-Enterprise GraphQL Server is built with [Node](https://nodejs.org/en/), [GraphQL](https://graphql.org), [Express](https://expressjs.com), [Express-GraphQL](https://github.com/graphql/express-graphql). Integration Testing with [SuperTest](https://github.com/visionmedia/supertest), [Mocha](https://mochajs.org/), and [Chai](https://www.chaijs.com/). Seamless Continuous Integration with [Travis-CI](https://travis-ci.com/) and [Github](https://github.com/).
+Enterprise GraphQL Server is built with [Node](https://nodejs.org/en/), [GraphQL](https://graphql.org), [Express](https://expressjs.com), [Express-GraphQL](https://github.com/graphql/express-graphql). High-integrity Integration Testing with [SuperTest](https://github.com/visionmedia/supertest), [Mocha](https://mochajs.org/), and [Chai](https://www.chaijs.com/). Continuous Integration with [Travis-CI](https://travis-ci.com/) and [Github](https://github.com/).
+
+This project uses local mock data for rapid prototyping and experimenting so that you are not locked into a specific backend configuration.
 
 <h2 align="center">Quick Start</h2>
 
