@@ -53,7 +53,7 @@ A best practice is to perform merging when the working tree is clean. Use cautio
 
 Staying up-to-date with the latest from `main` is beneficial to parallel development. Remote `main` represents the most stable and approved iteration of the product. In Parallel Development, updates to `main` may affect current implementation. Work with the latest from `main` by merging the latest from `main` into `feature/{name}` as frequently as possible, but only when necessary.
 
-#### Merging from Master Procedure
+#### Merging from Main Procedure
 
 - `> git reset --hard` or `> git stash`
 - `> git checkout main`
@@ -66,13 +66,13 @@ Staying up-to-date with the latest from `main` is beneficial to parallel develop
   - `> git commit -m "merge main, resolved conflicts"`
   - `> git push`
 
-#### Merging to Master
+#### Merging to Main
 
 - Make sure your feature branch is not behind the main. You can view it from the [Branch Status](https://github.com/nolindnaidoo/enterprise-react-components/branches) view in the Behind/Ahead column.
 - Verify that your feature branch builds successfully on [TravisCI](https://travis-ci.org/github/nolindnaidoo/enterprise-react-components/branches).
-- Check your coverage against master. The Feature Branch should be greater than or equal to the master.
+- Check your coverage against main. The Feature Branch should be greater than or equal to the main.
 - Resolve or reply to all Pull Request comments.
-- Use the Merge button on the Pull Request to merge back to master.
+- Use the Merge button on the Pull Request to merge back to main.
 - Once the test is successful and no further changes are needed for sign off delete the original feature branch.
 
 ## API Testing
