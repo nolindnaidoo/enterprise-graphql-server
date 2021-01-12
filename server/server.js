@@ -13,6 +13,7 @@ app.use(
   })
 );
 
-app.listen(3001, () =>
-  console.log(process.env.NODE_ENV, 'server: http://localhost:3001/graphql')
-);
+app.listen(3001, () => {
+  console.log(process.env.NODE_ENV, 'server: http://localhost:3001/graphql');
+  return process.env.NODE_ENV === 'ci' ? process.exit() : null;
+});
