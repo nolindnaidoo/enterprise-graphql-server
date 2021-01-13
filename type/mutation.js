@@ -14,7 +14,7 @@ const RootMutationType = new GraphQLObjectType({
   name: 'Mutation',
   description: 'Root Mutation Query',
   fields: () => ({
-    addObject: {
+    object: {
       type: ObjectType,
       description: 'Add an object',
       args: {
