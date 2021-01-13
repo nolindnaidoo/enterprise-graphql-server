@@ -21,9 +21,11 @@
     "lint": "eslint data server test type --fix",
     "test": "mocha",
     "pre": "yarn && yarn run lint",
+    "start": "yarn run pre && cross-env NODE_ENV=development nodemon --experimental-specifier-resolution=node server/server.js",
     "build": "yarn run pre && cross-env NODE_ENV=production node --experimental-specifier-resolution=node server/server.js",
     "buildci": "yarn run pre && cross-env NODE_ENV=ci node --experimental-specifier-resolution=node server/server.js",
-    "start": "yarn run pre && cross-env NODE_ENV=development nodemon --experimental-specifier-resolution=node server/server.js"
+    "builddocker": "docker build -t enterprise-graphql-server .",
+    "docker": "docker run -it -p 3005:3001 enterprise-graphql-server"
   },
   "dependencies": {
     "express": "^4.17.1",

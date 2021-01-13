@@ -8,7 +8,7 @@
 
 ### Core Libraries
 
-Enterprise GraphQL Server is built with [ES2021](https://javascript.christmas/2020/7) [Node 15](https://nodejs.org/en/), [GraphQL](https://graphql.org), [Express](https://expressjs.com), [Express-GraphQL](https://github.com/graphql/express-graphql). High-integrity Integration Testing with [SuperTest](https://github.com/visionmedia/supertest), [Mocha](https://mochajs.org/), and [Chai](https://www.chaijs.com/). Continuous Integration with [Travis-CI](https://travis-ci.com/) and [Github](https://github.com/).
+A Node GraphQL server template built with [ES2021](https://javascript.christmas/2020/7) [Node 15](https://nodejs.org/en/), [GraphQL](https://graphql.org), [Express](https://expressjs.com), [Express-GraphQL](https://github.com/graphql/express-graphql). High-integrity Integration Testing with [SuperTest](https://github.com/visionmedia/supertest), [Mocha](https://mochajs.org/), and [Chai](https://www.chaijs.com/). Containerization with [Docker](https://www.docker.com/). Continuous Integration with [Travis-CI](https://travis-ci.com/) and [Github](https://github.com/).
 
 <h2 align="center">Quick Start</h2>
 
@@ -24,6 +24,7 @@ Enterprise GraphQL Server is built with [ES2021](https://javascript.christmas/20
 - Install [NVM](https://github.com/nvm-sh/nvm) (Optional)
 - Install [Node 15](https://nodejs.org/en/)
 - Install [YarnPKG](https://yarnpkg.com/en/docs/install)
+- Install [Docker](https://www.docker.com/products/docker-desktop)
 - Install [Git](https://git-scm.com/downloads) and run these commands to configure it:
   - `> git config --global user.name "{FULL_NAME}"`
   - `> git config --global user.email {EMAIL}`
