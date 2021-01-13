@@ -8,12 +8,13 @@ app.use(
   '/graphql',
   graphqlHTTP({
     schema: RootQuerySchema,
-    // eslint-disable-next-line
-    graphiql: process.env.NODE_ENV === 'development' ? true : false
+    graphiql: process.env.NODE_ENV === 'development' || false
   })
 );
 
 app.listen(3001, () => {
+  // eslint-disable-next-line
   console.log(process.env.NODE_ENV, 'server: http://localhost:3001/graphql');
+  // Close the server in CI environments to indicate a successful build
   return process.env.NODE_ENV === 'ci' ? process.exit() : null;
 });
