@@ -28,7 +28,6 @@ describe('Query objects', () => {
         chai.expect(res.body.data).to.deep.equal({
           objects: [
             {
-              id: 1,
               GraphQLBoolean: true,
               GraphQLFloat: 123.4,
               GraphQLID: '1',
@@ -36,7 +35,6 @@ describe('Query objects', () => {
               GraphQLString: 'Array Object 1'
             },
             {
-              id: 2,
               GraphQLBoolean: false,
               GraphQLFloat: 432.1,
               GraphQLID: '2',

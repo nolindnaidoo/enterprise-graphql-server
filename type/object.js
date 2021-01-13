@@ -12,7 +12,6 @@ const ObjectType = new GraphQLObjectType({
   name: 'objects',
   description: 'All objects in data array',
   fields: () => ({
-    id: { type: GraphQLNonNull(GraphQLInt) },
     GraphQLBoolean: { type: GraphQLNonNull(GraphQLBoolean) },
     GraphQLFloat: { type: GraphQLNonNull(GraphQLFloat) },
     GraphQLID: { type: GraphQLNonNull(GraphQLID) },
