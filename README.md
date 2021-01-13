@@ -14,8 +14,10 @@ A Node GraphQL server template built with [ES2021](https://javascript.christmas/
 
 ### Scripts
 
-- `yarn start` - Deploy development server
-- `yarn run build` - Deploy production server
+- `yarn start` - Deploy development server at http://localhost:3001/graphql
+- `yarn run build` - Deploy production server at http://localhost:3001/graphql
+- `yarn run builddocker` - Build docker image
+- `yarn test` - Test server (Deploy server first)
 
 ### Usage
 
