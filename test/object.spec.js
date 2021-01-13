@@ -9,7 +9,7 @@ describe('Query objects', () => {
     request(localhost)
       .post('/graphql')
       .send({
-        query: `{ objects { GraphQLBoolean GraphQLFloat GraphQLID GraphQLInt GraphQLString } }`
+        query: `{ objects { id GraphQLBoolean GraphQLFloat GraphQLID GraphQLInt GraphQLString } }`
       })
       .expect(200)
       .end(done);
@@ -19,7 +19,7 @@ describe('Query objects', () => {
     request(localhost)
       .post('/graphql')
       .send({
-        query: `{ objects { GraphQLBoolean GraphQLFloat GraphQLID GraphQLInt GraphQLString } }`
+        query: `{ objects { id GraphQLBoolean GraphQLFloat GraphQLID GraphQLInt GraphQLString } }`
       })
       .expect(200)
       .end((err, res) => {
@@ -28,11 +28,20 @@ describe('Query objects', () => {
         chai.expect(res.body.data).to.deep.equal({
           objects: [
             {
+              id: 1,
               GraphQLBoolean: true,
               GraphQLFloat: 123.4,
               GraphQLID: '1',
               GraphQLInt: 1,
               GraphQLString: 'Array Object 1'
+            },
+            {
+              id: 2,
+              GraphQLBoolean: false,
+              GraphQLFloat: 432.1,
+              GraphQLID: '2',
+              GraphQLInt: 2,
+              GraphQLString: 'Array Object 2'
             }
           ]
         });
