@@ -1,8 +1,16 @@
 import express from 'express';
 import { graphqlHTTP } from 'express-graphql';
-import { RootQuerySchema } from '../type/root';
+import { GraphQLSchema } from 'graphql';
+
+import RootQueryType from '../type/root';
+import RootMutationType from '../type/mutation';
 
 const app = express();
+
+const RootQuerySchema = new GraphQLSchema({
+  query: RootQueryType,
+  mutation: RootMutationType
+});
 
 app.use(
   '/graphql',

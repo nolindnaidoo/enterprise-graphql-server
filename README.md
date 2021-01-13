@@ -17,6 +17,50 @@ A Node GraphQL server template built with [ES2021](https://javascript.christmas/
 - `yarn start` - Deploy development server
 - `yarn run build` - Deploy production server
 
+### Usage
+
+#### Query all objects
+
+```
+{
+  objects {
+    GraphQLBoolean
+    GraphQLFloat
+    GraphQLID
+    GraphQLInt
+    GraphQLString
+  }
+}
+```
+
+#### Query a single objects
+
+```
+{
+  object(GraphQLID: 1) {
+    GraphQLBoolean
+    GraphQLFloat
+    GraphQLID
+    GraphQLInt
+    GraphQLString
+  }
+}
+```
+
+#### Mutation
+
+```
+mutation {
+  addObject( GraphQLBoolean: true, GraphQLFloat: 3, GraphQLID: 3, GraphQLInt: 3, GraphQLString: "Object 3") {
+    GraphQLBoolean
+    GraphQLFloat
+    GraphQLID
+    GraphQLInt
+    GraphQLString
+  }
+}
+```
+
 <h1 align="center">Development Setup</h1>
 
 ## Environment

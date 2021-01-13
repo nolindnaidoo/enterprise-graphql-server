@@ -3,9 +3,9 @@ import {
   GraphQLFloat,
   GraphQLID,
   GraphQLInt,
+  GraphQLNonNull,
   GraphQLObjectType,
-  GraphQLString,
-  GraphQLNonNull
+  GraphQLString
 } from 'graphql';
 
 const ObjectType = new GraphQLObjectType({

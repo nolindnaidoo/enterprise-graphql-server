@@ -1,13 +1,8 @@
-import {
-  GraphQLObjectType,
-  GraphQLInt,
-  GraphQLList,
-  GraphQLSchema
-} from 'graphql';
+import { GraphQLInt, GraphQLList, GraphQLObjectType } from 'graphql';
 import ObjectType from './object';
 import Data from '../data/data';
 
-export const RootQueryType = new GraphQLObjectType({
+const RootQueryType = new GraphQLObjectType({
   name: 'RootQuery',
   description: 'Root Query',
   fields: () => ({
@@ -28,6 +23,4 @@ export const RootQueryType = new GraphQLObjectType({
   })
 });
 
-export const RootQuerySchema = new GraphQLSchema({
-  query: RootQueryType
-});
+export default RootQueryType;

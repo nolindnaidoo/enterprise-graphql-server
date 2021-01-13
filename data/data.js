@@ -1,17 +1,17 @@
 const Data = [
   {
     GraphQLBoolean: true,
-    GraphQLFloat: '123.4',
+    GraphQLFloat: '1',
     GraphQLID: 1,
     GraphQLInt: 1,
-    GraphQLString: 'Array Object 1'
+    GraphQLString: 'Object 1'
   },
   {
     GraphQLBoolean: false,
-    GraphQLFloat: '432.1',
+    GraphQLFloat: '2',
     GraphQLID: 2,
     GraphQLInt: 2,
-    GraphQLString: 'Array Object 2'
+    GraphQLString: 'Object 2'
   }
 ];
 
