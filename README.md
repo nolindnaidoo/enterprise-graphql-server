@@ -8,18 +8,25 @@
 
 ### Core Libraries
 
-A Node GraphQL server template built with [ES2021](https://javascript.christmas/2020/7) [Node 15](https://nodejs.org/en/), [GraphQL](https://graphql.org), [Express](https://expressjs.com), [Express-GraphQL](https://github.com/graphql/express-graphql). High-integrity Integration Testing with [SuperTest](https://github.com/visionmedia/supertest), [Mocha](https://mochajs.org/), and [Chai](https://www.chaijs.com/). Containerization with [Docker](https://www.docker.com/). Continuous Integration with [Travis-CI](https://travis-ci.com/) and [Github](https://github.com/).
+A Node GraphQL server template built with [ES2021](https://javascript.christmas/2020/7) [Node](https://nodejs.org/en/), [GraphQL](https://graphql.org), [Express](https://expressjs.com), [Express-GraphQL](https://github.com/graphql/express-graphql). High-integrity Integration Testing with [SuperTest](https://github.com/visionmedia/supertest), [Mocha](https://mochajs.org/), and [Chai](https://www.chaijs.com/). Containerization with [Docker](https://www.docker.com/). Continuous Integration with [Travis-CI](https://travis-ci.com/) and [Github](https://github.com/).
 
 <h2 align="center">Quick Start</h2>
 
 ### Scripts
 
+Install & Lint are handled by pre-script. Just run start or build :)
+
+**Development**
+
 - `yarn start` - Deploy development server at http://localhost:3001/graphql
-- `yarn run build` - Deploy production server at http://localhost:3001/graphql
-- `yarn run builddocker` - Build docker image
 - `yarn test` - Test server (Deploy server first)
 
-### Usage
+**Production**
+
+- `yarn run build` - Deploy production server at http://localhost:3001/graphql
+- `yarn run buildDocker` - Deploy Docker container at http://localhost:3002/graphql
+
+### Example Usage
 
 #### Query all objects
 
@@ -53,7 +60,7 @@ A Node GraphQL server template built with [ES2021](https://javascript.christmas/
 
 ```
 mutation {
-  object( GraphQLBoolean: true, GraphQLFloat: 3, GraphQLID: 3, GraphQLInt: 3, GraphQLString: "Object 3") {
+  addObject( GraphQLBoolean: true, GraphQLFloat: 2, GraphQLID: 2, GraphQLInt: 2, GraphQLString: "Object 2") {
     GraphQLBoolean
     GraphQLFloat
     GraphQLID
@@ -68,7 +75,7 @@ mutation {
 ## Environment
 
 - Install [NVM](https://github.com/nvm-sh/nvm) (Optional)
-- Install [Node 15](https://nodejs.org/en/)
+- Install [Node](https://nodejs.org/en/)
 - Install [YarnPKG](https://yarnpkg.com/en/docs/install)
 - Install [Docker](https://www.docker.com/products/docker-desktop)
 - Install [Git](https://git-scm.com/downloads) and run these commands to configure it:
@@ -106,7 +113,7 @@ Enterprise React Components uses [Airbnb ESLint rules](https://github.com/airbnb
 
 #### Exceptions
 
-- [comma-dangle](https://eslint.org/docs/rules/comma-dangle)
+- [comma-dangle](https://eslint.org/docs/rules/comma-dangle) ["error", "never"]
 
 ## Git
 

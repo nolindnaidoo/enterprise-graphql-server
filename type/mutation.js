@@ -14,7 +14,7 @@ const RootMutationType = new GraphQLObjectType({
   name: 'Mutation',
   description: 'Root Mutation Query',
   fields: () => ({
-    object: {
+    addObject: {
       type: ObjectType,
       description: 'Add an object',
       args: {
@@ -28,12 +28,25 @@ const RootMutationType = new GraphQLObjectType({
         const object = {
           GraphQLBoolean: args.GraphQLBoolean,
           GraphQLFloat: args.GraphQLFloat,
-          GraphQLID: args.GraphQLID.length + 1,
+          GraphQLID: args.GraphQLID,
           GraphQLInt: args.GraphQLInt,
           GraphQLString: args.GraphQLString
         };
         Data.push(object);
         return object;
+      }
+    },
+    deleteObject: {
+      type: ObjectType,
+      description: 'Delete an object',
+      args: {
+        GraphQLID: { type: GraphQLNonNull(GraphQLID) }
+      },
+      resolve: (parent, args) => {
+        const newArray = Data.filter(
+          (object) => object.GraphQLID !== args.GraphQLID
+        );
+        Data.splice(0, Data.length, ...newArray);
       }
     }
   })

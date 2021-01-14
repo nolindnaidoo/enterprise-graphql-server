@@ -1,6 +1,8 @@
 {
   "name": "enterprise-graphql-sever",
   "version": "1.0.0",
+  "private": false,
+  "license": "Unlicense",
   "author": "Nolin D Naidoo <nolinnaidoo77@gmail.com> (https://www.linkedin.com/in/nolindnaidoo/)",
   "description": "An flexible enterprise-class GraphQL server template built using Node, Express, Express-GraphQL, and GraphQL.",
   "keywords": [
@@ -9,23 +11,25 @@
     "graphql",
     "node"
   ],
-  "private": false,
-  "license": "Unlicense",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nolindnaidoo/enterprise-graphql-server.git"
   },
-  "main": "server.js",
+  "engines": {
+    "node": ">= 10.x"
+  },
   "type": "module",
+  "main": "server.js",
   "scripts": {
     "lint": "eslint data server test type --fix",
-    "test": "mocha",
     "pre": "yarn && yarn run lint",
     "start": "yarn run pre && cross-env NODE_ENV=development nodemon --experimental-specifier-resolution=node server/server.js",
     "build": "yarn run pre && cross-env NODE_ENV=production node --experimental-specifier-resolution=node server/server.js",
-    "buildci": "yarn run pre && cross-env NODE_ENV=ci node --experimental-specifier-resolution=node server/server.js",
-    "builddocker": "docker build -t enterprise-graphql-server .",
-    "docker": "docker run -it -p 3005:3001 enterprise-graphql-server"
+    "buildCI": "yarn run pre && cross-env NODE_ENV=ci node --experimental-specifier-resolution=node server/server.js",
+    "test": "mocha",
+    "dockerImage": "docker build -t enterprise-graphql-server .",
+    "dockerContainer": "docker run -it -p 3002:3001 enterprise-graphql-server",
+    "buildDocker": "yarn run dockerImage && yarn run dockerContainer"
   },
   "dependencies": {
     "express": "^4.17.1",
