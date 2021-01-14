@@ -23,7 +23,6 @@ describe('Query all objects', () => {
       })
       .expect(200)
       .end((err, res) => {
-        // res will contain array with one user
         if (err) return done(err);
         chai.expect(res.body.data).to.deep.equal({
           objects: [
@@ -67,7 +66,6 @@ describe('Query a single object', () => {
       })
       .expect(200)
       .end((err, res) => {
-        // res will contain array with one user
         if (err) return done(err);
         chai.expect(res.body.data).to.deep.equal({
           object: {
@@ -102,7 +100,6 @@ describe('Mutation: Add a single object', () => {
       })
       .expect(200)
       .end((err, res) => {
-        // res will contain array with one user
         if (err) return done(err);
         chai.expect(res.body.data).to.deep.equal({
           objects: [
