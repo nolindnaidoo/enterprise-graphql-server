@@ -143,6 +143,56 @@ describe('Mutations', () => {
     });
   });
 
+  describe('Mutation: Update a single object', () => {
+    it('should return response 200 (OK)', (done) => {
+      request(localhost)
+        .post('/graphql')
+        .send({
+          query: `mutation { updateObject(GraphQLID: 2, GraphQLBoolean: true) { GraphQLBoolean GraphQLFloat GraphQLID GraphQLInt GraphQLString } }`
+        })
+        .expect(200)
+        .end(done);
+    });
+
+    it('should return correctly mutated & transformed data ouput', (done) => {
+      request(localhost)
+        .post('/graphql')
+        .send({
+          query: `{ objects { GraphQLBoolean GraphQLFloat GraphQLID GraphQLInt GraphQLString } }`
+        })
+        .expect(200)
+        .end((err, res) => {
+          if (err) return done(err);
+          chai.expect(res.body.data).to.deep.include({
+            objects: [
+              {
+                GraphQLBoolean: true,
+                GraphQLFloat: 0,
+                GraphQLID: '0',
+                GraphQLInt: 0,
+                GraphQLString: 'Object 0'
+              },
+              {
+                GraphQLBoolean: false,
+                GraphQLFloat: 1,
+                GraphQLID: '1',
+                GraphQLInt: 1,
+                GraphQLString: 'Object 1'
+              },
+              {
+                GraphQLBoolean: true,
+                GraphQLFloat: Data.length + 1,
+                GraphQLID: `${Data.length + 1}`,
+                GraphQLInt: Data.length + 1,
+                GraphQLString: `Object ${Data.length + 1}`
+              }
+            ]
+          });
+          return done();
+        });
+    });
+  });
+
   describe('Mutation: Delete a single object by ID', () => {
     it('should return response 200 (OK)', (done) => {
       request(localhost)
