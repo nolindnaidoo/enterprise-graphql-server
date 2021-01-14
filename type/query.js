@@ -1,6 +1,6 @@
 import { GraphQLInt, GraphQLList, GraphQLObjectType } from 'graphql';
-import ObjectType from './object';
-import Data from '../data/data';
+import ObjectType from './object.js';
+import Data from '../data/mockData.js';
 
 const RootQueryType = new GraphQLObjectType({
   name: 'RootQuery',

@@ -28,7 +28,9 @@ Install & Lint are handled by pre-script. Just run start or build :)
 
 ### Example Usage
 
-#### Query all objects
+#### Queries
+
+##### Query: get all objects
 
 ```
 {
@@ -42,7 +44,7 @@ Install & Lint are handled by pre-script. Just run start or build :)
 }
 ```
 
-#### Query a single objects
+##### Query: get a single object
 
 ```
 {
@@ -56,11 +58,41 @@ Install & Lint are handled by pre-script. Just run start or build :)
 }
 ```
 
-#### Mutation
+#### Mutations
+
+#### Mutation: Add a single object by ID
 
 ```
 mutation {
   addObject( GraphQLBoolean: true, GraphQLFloat: 2, GraphQLID: 2, GraphQLInt: 2, GraphQLString: "Object 2") {
+    GraphQLBoolean
+    GraphQLFloat
+    GraphQLID
+    GraphQLInt
+    GraphQLString
+  }
+}
+```
+
+#### Mutation: Update a single object by ID
+
+```
+mutation {
+  updateObject(GraphQLID: 1, GraphQLBoolean: true) {
+    GraphQLBoolean
+    GraphQLFloat
+		GraphQLID
+    GraphQLInt
+    GraphQLString
+  }
+}
+```
+
+#### Mutation: Delete a single object by ID
+
+```
+mutation {
+  deleteObject(GraphQLID: 2) {
     GraphQLBoolean
     GraphQLFloat
     GraphQLID
@@ -91,7 +123,6 @@ mutation {
 - This project uses local mock data for rapid prototyping and experimenting so that you are not locked into a specific backend host or configuration.
 
 - `"type": "module",` - It uses modules with import/export instead of CommonJS require.
-- `--experimental-specifier-resolution=node`
 
 ## API Testing
 
@@ -114,6 +145,7 @@ Enterprise React Components uses [Airbnb ESLint rules](https://github.com/airbnb
 #### Exceptions
 
 - [comma-dangle](https://eslint.org/docs/rules/comma-dangle) ["error", "never"]
+- [import/extensions](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md) off
 
 ## Git
 

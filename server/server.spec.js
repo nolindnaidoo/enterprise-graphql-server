@@ -1,9 +1,7 @@
 import { describe, it } from 'mocha';
 import request from 'supertest';
 import chai from 'chai';
-
-// eslint-disable-next-line
-import Data from '../data/data.js';
+import Data from '../data/mockData.js';
 
 const localhost = 'http://localhost:3001';
 
@@ -198,9 +196,7 @@ describe('Mutations', () => {
       request(localhost)
         .post('/graphql')
         .send({
-          query: `mutation { deleteObject(GraphQLID: ${
-            Data.length + 1
-          }) { GraphQLBoolean GraphQLFloat GraphQLID GraphQLInt GraphQLString } }`
+          query: `mutation { deleteObject(GraphQLID: 2) { GraphQLBoolean GraphQLFloat GraphQLID GraphQLInt GraphQLString } }`
         })
         .expect(200)
         .end(done);

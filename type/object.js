@@ -3,7 +3,6 @@ import {
   GraphQLFloat,
   GraphQLID,
   GraphQLInt,
-  GraphQLNonNull,
   GraphQLObjectType,
   GraphQLString
 } from 'graphql';
@@ -12,11 +11,11 @@ const ObjectType = new GraphQLObjectType({
   name: 'objects',
   description: 'All objects in data array',
   fields: () => ({
-    GraphQLBoolean: { type: GraphQLNonNull(GraphQLBoolean) },
-    GraphQLFloat: { type: GraphQLNonNull(GraphQLFloat) },
-    GraphQLID: { type: GraphQLNonNull(GraphQLID) },
-    GraphQLInt: { type: GraphQLNonNull(GraphQLInt) },
-    GraphQLString: { type: GraphQLNonNull(GraphQLString) }
+    GraphQLBoolean: { type: GraphQLBoolean },
+    GraphQLFloat: { type: GraphQLFloat },
+    GraphQLID: { type: GraphQLID },
+    GraphQLInt: { type: GraphQLInt },
+    GraphQLString: { type: GraphQLString }
   })
 });
 

@@ -7,12 +7,12 @@ import {
   GraphQLObjectType,
   GraphQLString
 } from 'graphql';
-import ObjectType from './object';
-import Data from '../data/data';
+import ObjectType from './object.js';
+import Data from '../data/mockData.js';
 
 const RootMutationType = new GraphQLObjectType({
   name: 'RootMutation',
-  description: 'RootMutation Query',
+  description: 'Root Mutation',
   fields: () => ({
     addObject: {
       type: ObjectType,
@@ -40,7 +40,7 @@ const RootMutationType = new GraphQLObjectType({
       type: ObjectType,
       description: 'Update an object partially',
       args: {
-        GraphQLID: { type: GraphQLInt },
+        GraphQLID: { type: GraphQLID },
         GraphQLBoolean: { type: GraphQLBoolean },
         GraphQLFloat: { type: GraphQLFloat },
         GraphQLInt: { type: GraphQLInt },
@@ -48,7 +48,7 @@ const RootMutationType = new GraphQLObjectType({
       },
       resolve: (parent, args) => {
         const filteredObject = Data.find(
-          (data) => data.GraphQLID === args.GraphQLID
+          (object) => object.GraphQLID === args.GraphQLID
         );
 
         if (args.GraphQLBoolean !== undefined) {
@@ -78,16 +78,17 @@ const RootMutationType = new GraphQLObjectType({
     },
     deleteObject: {
       type: ObjectType,
-      description: 'Delete an object by ID',
+      description: 'Delete a single object by ID',
       args: {
-        GraphQLID: { type: GraphQLNonNull(GraphQLID) }
+        GraphQLID: { type: GraphQLID }
       },
       resolve: (parent, args) => {
-        const filteredObject = Data.filter(
-          (object) => object.GraphQLID !== args.GraphQLID
+        const index = Data.findIndex(
+          (object) => object.GraphQLID === args.GraphQLID
         );
 
-        Data.splice(0, Data.length, ...filteredObject);
+        Data.splice(index, 1);
+        return Data;
       }
     }
   })

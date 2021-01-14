@@ -11,6 +11,7 @@
   },
   "rules": {
     "comma-dangle": ["error", "never"],
+    "import/extensions": "off",
     "prettier/prettier": [
       "error",
       {
