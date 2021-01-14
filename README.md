@@ -53,7 +53,7 @@ A Node GraphQL server template built with [ES2021](https://javascript.christmas/
 
 ```
 mutation {
-  addObject( GraphQLBoolean: true, GraphQLFloat: 3, GraphQLID: 3, GraphQLInt: 3, GraphQLString: "Object 3") {
+  object( GraphQLBoolean: true, GraphQLFloat: 3, GraphQLID: 3, GraphQLInt: 3, GraphQLString: "Object 3") {
     GraphQLBoolean
     GraphQLFloat
     GraphQLID
