@@ -19,11 +19,10 @@ app.use(
   })
 );
 
-app.listen(3001, () => {
-  /* eslint-disable no-console */
-  console.log(process.env.NODE_ENV, 'server: http://localhost:3001/graphql');
-  /* enable */
-
-  // Close the server in CI environments to indicate a successful build
-  return process.env.NODE_ENV === 'ci' ? process.exit() : null;
-});
+/* eslint-disable */
+app.listen(3001, () =>
+  process.env.NODE_ENV === 'ci'
+    ? process.exit()
+    : console.log(process.env.NODE_ENV, 'server: http://localhost:3001/graphql')
+);
+/* eslint-enable */

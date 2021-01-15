@@ -90,7 +90,7 @@ const RootMutationType = new GraphQLObjectType({
           (object) => object.GraphQLID === args.GraphQLID
         );
 
-        Data.splice(index, 1, ...Data);
+        Data.splice(index, 1);
 
         const object = {
           GraphQLID: filteredObject.GraphQLID
