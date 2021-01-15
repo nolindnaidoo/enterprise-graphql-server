@@ -1,15 +1,5 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
-# App Build, Test, and Dependencies
-build
-coverage
-storybook-static/
-**/__snapshots__
-test-report.html
-/node_modules
-node_modules
-bower_components
-
 # Environment
 ._*
 .DS_Store
@@ -24,6 +14,7 @@ npm-debug.*
 Thumbs.db
 yarn-debug.*
 yarn-error.*
+/node_modules
 
 # Filetypes
 *.7z

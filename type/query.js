@@ -8,7 +8,7 @@ const RootQueryType = new GraphQLObjectType({
   fields: () => ({
     object: {
       type: ObjectType,
-      description: 'A single object',
+      description: 'GET an Object',
       args: {
         GraphQLID: { type: GraphQLInt }
       },
@@ -17,7 +17,7 @@ const RootQueryType = new GraphQLObjectType({
     },
     objects: {
       type: new GraphQLList(ObjectType),
-      description: 'Array of Objects',
+      description: 'GET all objects',
       resolve: () => Data
     }
   })

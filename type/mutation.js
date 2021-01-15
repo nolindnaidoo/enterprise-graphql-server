@@ -1,7 +1,6 @@
 import {
   GraphQLBoolean,
   GraphQLFloat,
-  GraphQLID,
   GraphQLInt,
   GraphQLNonNull,
   GraphQLObjectType,
@@ -16,11 +15,11 @@ const RootMutationType = new GraphQLObjectType({
   fields: () => ({
     addObject: {
       type: ObjectType,
-      description: 'Add an object',
+      description: 'Mutation: Add a single object',
       args: {
+        GraphQLID: { type: GraphQLNonNull(GraphQLInt) },
         GraphQLBoolean: { type: GraphQLNonNull(GraphQLBoolean) },
         GraphQLFloat: { type: GraphQLNonNull(GraphQLFloat) },
-        GraphQLID: { type: GraphQLNonNull(GraphQLID) },
         GraphQLInt: { type: GraphQLNonNull(GraphQLInt) },
         GraphQLString: { type: GraphQLNonNull(GraphQLString) }
       },
@@ -38,9 +37,9 @@ const RootMutationType = new GraphQLObjectType({
     },
     updateObject: {
       type: ObjectType,
-      description: 'Update an object partially',
+      description: 'Mutation: Update a single object',
       args: {
-        GraphQLID: { type: GraphQLID },
+        GraphQLID: { type: GraphQLNonNull(GraphQLInt) },
         GraphQLBoolean: { type: GraphQLBoolean },
         GraphQLFloat: { type: GraphQLFloat },
         GraphQLInt: { type: GraphQLInt },
@@ -78,17 +77,22 @@ const RootMutationType = new GraphQLObjectType({
     },
     deleteObject: {
       type: ObjectType,
-      description: 'Delete a single object by ID',
+      description: 'Mutation: Delete a single object by ID',
       args: {
-        GraphQLID: { type: GraphQLID }
+        GraphQLID: { type: GraphQLNonNull(GraphQLInt) }
       },
       resolve: (parent, args) => {
+        const filteredObject = Data.find(
+          (object) => object.GraphQLID === args.GraphQLID
+        );
+
         const index = Data.findIndex(
           (object) => object.GraphQLID === args.GraphQLID
         );
 
         Data.splice(index, 1);
-        return Data;
+
+        return filteredObject;
       }
     }
   })

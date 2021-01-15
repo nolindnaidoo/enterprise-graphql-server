@@ -21,12 +21,12 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "lint": "eslint data server type --fix",
+    "lint": "eslint data server test type --fix",
     "pre": "yarn && yarn run lint",
     "start": "yarn run pre && cross-env NODE_ENV=development nodemon server/server.js",
     "build": "yarn run pre && cross-env NODE_ENV=production node server/server.js",
     "buildCI": "yarn run pre && cross-env NODE_ENV=ci node server/server.js",
-    "test": "mocha **/*.spec.js",
+    "test": "mocha",
     "dockerImage": "docker build -t enterprise-graphql-server .",
     "dockerContainer": "docker run -it -p 3002:3001 enterprise-graphql-server",
     "buildDocker": "yarn run dockerImage && yarn run dockerContainer"

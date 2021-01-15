@@ -9,7 +9,7 @@ import {
 
 const ObjectType = new GraphQLObjectType({
   name: 'objects',
-  description: 'All objects in data array',
+  description: 'Definition of ObjectType',
   fields: () => ({
     GraphQLBoolean: { type: GraphQLBoolean },
     GraphQLFloat: { type: GraphQLFloat },

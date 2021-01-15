@@ -1,8 +1,6 @@
 language: node_js
 node_js:
   - '15'
-services:
-  - docker
+install: true
 script:
   - yarn run buildci
-  - yarn run builddocker

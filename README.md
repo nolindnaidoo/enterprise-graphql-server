@@ -28,9 +28,9 @@ Install & Lint are handled by pre-script. Just run start or build :)
 
 ### Example Usage
 
-#### Queries
+#### Query: objects
 
-##### Query: get all objects
+##### Return all objects
 
 ```
 {
@@ -44,7 +44,9 @@ Install & Lint are handled by pre-script. Just run start or build :)
 }
 ```
 
-##### Query: get a single object
+#### Query: objects
+
+##### Return an object by ID
 
 ```
 {
@@ -58,9 +60,9 @@ Install & Lint are handled by pre-script. Just run start or build :)
 }
 ```
 
-#### Mutations
+#### Mutation: addObject
 
-#### Mutation: Add a single object by ID
+##### Add an object by ID
 
 ```
 mutation {
@@ -74,7 +76,9 @@ mutation {
 }
 ```
 
-#### Mutation: Update a single object by ID
+#### Mutation: updateObject
+
+##### Update an object by ID
 
 ```
 mutation {
@@ -88,7 +92,9 @@ mutation {
 }
 ```
 
-#### Mutation: Delete a single object by ID
+#### Mutation: deleteObject
+
+##### Remove an object by ID
 
 ```
 mutation {
