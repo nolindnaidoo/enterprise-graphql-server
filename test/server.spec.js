@@ -5,7 +5,7 @@ import chai from 'chai';
 const url = 'http://localhost:3001';
 const endpoint = '/graphql';
 
-describe('Query: objects', () => {
+describe('Query: getObjects', () => {
   it('should transform & return all objects', (done) => {
     request(url)
       .post(endpoint)
@@ -38,7 +38,7 @@ describe('Query: objects', () => {
   });
 });
 
-describe('Query: object', () => {
+describe('Query: getObject', () => {
   it('should transform & return an object by ID', (done) => {
     request(url)
       .post(endpoint)

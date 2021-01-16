@@ -14,17 +14,20 @@ A Node GraphQL server template built with [ES2021](https://javascript.christmas/
 
 ### Scripts
 
-Install & Lint are handled by pre-script. Just run start or build :)
+Server is deployed at http://localhost:3001/graphql
 
 **Development**
 
-- `yarn start` - Deploy development server at http://localhost:3001/graphql
-- `yarn test` - Test server (Deploy server first)
+- `yarn start` - Deploy Development Server
 
 **Production**
 
-- `yarn run build` - Deploy production server at http://localhost:3001/graphql
-- `yarn run buildDocker` - Deploy Docker container at http://localhost:3002/graphql
+- `yarn run build` - Deploy Production Server
+- `yarn run buildDocker` - Deploy Docker container
+
+**Test**
+
+- `yarn test` - Test the server (Deploy server first)
 
 ### Example Usage
 
@@ -56,7 +59,7 @@ http://localhost:3001/graphql?query=%0A%23%20Query%3A%20get%20all%20objects%0A%2
 
 ```
 {
-  getObject(GraphQLID: 1) {
+  getObject(GraphQLID: 0) {
     GraphQLBoolean
     GraphQLFloat
     GraphQLID
@@ -88,7 +91,7 @@ mutation {
 
 ```
 mutation {
-  updateObject(GraphQLID: 1, GraphQLBoolean: true) {
+  updateObject(GraphQLID: 2, GraphQLBoolean: true) {
     GraphQLBoolean
     GraphQLFloat
 		GraphQLID
@@ -130,11 +133,7 @@ mutation {
 - Setup [SSH](https://help.github.com/articles/connecting-to-github-with-ssh/)
 - Clone Repository `git clone https://github.com/nolindnaidoo/enterprise-graphql-server.git`
 
-## Environment
-
-- This project uses local mock data for rapid prototyping and experimenting so that you are not locked into a specific backend host or configuration.
-
-- `"type": "module",` - It uses modules with import/export instead of CommonJS require.
+> `"type": "module",` - It uses modules with import/export instead of CommonJS require.
 
 ## API Testing
 
@@ -150,9 +149,9 @@ The following links provide enhanced awareness throughout the Agile SDLC process
 - [Pull Request Status](https://github.com/nolindnaidoo/enterprise-graphql-server/pulls)
 - [TravisCI Repo Dashboard](https://travis-ci.org/github/nolindnaidoo/enterprise-graphql-server)
 
-## ESLint
+## Linting & Beautification
 
-Enterprise React Components uses [Airbnb ESLint rules](https://github.com/airbnb/javascript) for lint/syntax errors, along with [Prettier](https://github.com/prettier/prettier) for automated formatting and lint error fixing.
+[ESLint](https://eslint.org) with [Airbnb Config](https://github.com/airbnb/javascript) for lint/syntax errors. [Prettier](https://github.com/prettier/prettier) for automated formatting and lint error fixing on file save. (Configure your editor)
 
 #### Exceptions
 

@@ -9,13 +9,14 @@ import {
 import ObjectType from './object.js';
 import Data from '../data/mockData.js';
 
+// Schema definition for root mutations
 const RootMutationType = new GraphQLObjectType({
   name: 'RootMutation',
   description: 'List of available Mutations',
   fields: () => ({
     addObject: {
       type: ObjectType,
-      description: 'Mutation: Add a single object',
+      description: 'Add an object by ID',
       args: {
         GraphQLID: { type: GraphQLNonNull(GraphQLInt) },
         GraphQLBoolean: { type: GraphQLNonNull(GraphQLBoolean) },
@@ -42,7 +43,7 @@ const RootMutationType = new GraphQLObjectType({
     },
     updateObject: {
       type: ObjectType,
-      description: 'Mutation: Update a single object',
+      description: 'Update an object by ID',
       args: {
         GraphQLID: { type: GraphQLNonNull(GraphQLInt) },
         GraphQLBoolean: { type: GraphQLBoolean },
@@ -56,22 +57,22 @@ const RootMutationType = new GraphQLObjectType({
           (object) => object.GraphQLID === args.GraphQLID
         );
 
-        // Allow empty argument without updating object
+        // Allow empty argument without updating GraphQLBoolean
         if (args.GraphQLBoolean !== undefined) {
           filteredObject.GraphQLBoolean = args.GraphQLBoolean;
         }
 
-        // Allow empty argument without updating object
+        // Allow empty argument without updating GraphQLFloat
         if (args.GraphQLFloat !== undefined) {
           filteredObject.GraphQLFloat = args.GraphQLFloat;
         }
 
-        // Allow empty argument without updating object
+        // Allow empty argument without updating GraphQLInt
         if (args.GraphQLInt !== undefined) {
           filteredObject.GraphQLInt = args.GraphQLInt;
         }
 
-        // Allow empty argument without updating object
+        // Allow empty argument without updating GraphQLString
         if (args.GraphQLString !== undefined) {
           filteredObject.GraphQLString = args.GraphQLString;
         }
@@ -90,7 +91,7 @@ const RootMutationType = new GraphQLObjectType({
     },
     deleteObject: {
       type: ObjectType,
-      description: 'Mutation: Delete a single object by ID',
+      description: 'Delete an object by ID',
       args: {
         GraphQLID: { type: GraphQLNonNull(GraphQLInt) }
       },
