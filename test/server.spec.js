@@ -2,7 +2,9 @@ import { describe, it } from 'mocha';
 import request from 'supertest';
 import chai from 'chai';
 
+// Define the request host and port
 const url = 'http://localhost:3001';
+// Define the request endpoint
 const endpoint = '/graphql';
 
 // Define Test
