@@ -19,15 +19,14 @@ Server is deployed at http://localhost:3001/graphql
 **Development**
 
 - `yarn start` - Deploy Development Server
+- `yarn test` - Run Test Cases
 
 **Production**
 
 - `yarn run build` - Deploy Production Server
-- `yarn run buildDocker` - Deploy Docker container
+- `yarn run buildDocker` - Build Docker Image & Deploy Docker Container
 
-**Test**
-
-- `yarn test` - Test the server (Deploy server first)
+> See package.json for full list of scripts
 
 ### Example Usage
 
@@ -94,7 +93,7 @@ mutation {
   updateObject(GraphQLID: 2, GraphQLBoolean: true) {
     GraphQLBoolean
     GraphQLFloat
-		GraphQLID
+    GraphQLID
     GraphQLInt
     GraphQLString
   }
@@ -122,15 +121,15 @@ mutation {
 ## Environment
 
 - Install [NVM](https://github.com/nvm-sh/nvm) (Optional)
-- Install [Node](https://nodejs.org/en/)
-- Install [YarnPKG](https://yarnpkg.com/en/docs/install)
-- Install [Docker](https://www.docker.com/products/docker-desktop)
+- Install [Node](https://nodejs.org/en/) (Node 10+)
+- Install [Yarn](https://yarnpkg.com/en/docs/install)
+- Install [Docker Desktop](https://www.docker.com/products/docker-desktop)
 - Install [Git](https://git-scm.com/downloads) and run these commands to configure it:
   - `> git config --global user.name "{FULL_NAME}"`
   - `> git config --global user.email {EMAIL}`
   - `> git config --global core.autocrlf false`.
   - Refer to [Advanced Git Configuration](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) for additional information
-- Setup [SSH](https://help.github.com/articles/connecting-to-github-with-ssh/)
+- Setup [SSH Key](https://help.github.com/articles/connecting-to-github-with-ssh/)
 - Clone Repository `git clone https://github.com/nolindnaidoo/enterprise-graphql-server.git`
 
 > `"type": "module",` - It uses modules with import/export instead of CommonJS require.

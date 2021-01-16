@@ -15,19 +15,19 @@
     "type": "git",
     "url": "git+https://github.com/nolindnaidoo/enterprise-graphql-server.git"
   },
+  "main": "server/server.js",
+  "type": "module",
   "engines": {
     "node": ">= 10.x"
   },
-  "type": "module",
-  "main": "server/server.js",
   "scripts": {
     "lint": "eslint data server test type --fix",
     "pre": "yarn && yarn run lint",
     "start": "yarn run pre && cross-env NODE_ENV=development nodemon server/server.js",
     "build": "yarn run pre && cross-env NODE_ENV=production node server/server.js",
     "buildCI": "yarn run pre && cross-env NODE_ENV=ci node server/server.js",
-    "dockerImage": "yarn run pre && yarn run pre && docker build -t enterprise-graphql-server .",
-    "dockerContainer": "yarn run pre && docker run -it -p 3002:3001 enterprise-graphql-server",
+    "dockerImage": "yarn run build && docker build -t enterprise-graphql-server .",
+    "dockerContainer": "yarn run build && docker run -it -p 3002:3001 enterprise-graphql-server",
     "buildDocker": "yarn run dockerImage && yarn run dockerContainer",
     "test": "mocha"
   },
