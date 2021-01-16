@@ -9,7 +9,13 @@ import {
 import ObjectType from './object.js';
 import Data from '../data/mockData.js';
 
-// Schema definition for root mutations
+/**
+ * [RootMutationType]
+ * @param     {Object}  constructor
+ * @property  {string}  name  - Name of the object
+ * @property  {string}  description - Description of the object
+ * @property  {object}  fields  - The fields/properties of the object
+ */
 const RootMutationType = new GraphQLObjectType({
   name: 'RootMutation',
   description: 'List of available Mutations',
@@ -17,6 +23,7 @@ const RootMutationType = new GraphQLObjectType({
     addObject: {
       type: ObjectType,
       description: 'Add an object by ID',
+      // Required input arguments wrapped with GraphQLNonNull
       args: {
         GraphQLID: { type: GraphQLNonNull(GraphQLInt) },
         GraphQLBoolean: { type: GraphQLNonNull(GraphQLBoolean) },
@@ -24,6 +31,7 @@ const RootMutationType = new GraphQLObjectType({
         GraphQLInt: { type: GraphQLNonNull(GraphQLInt) },
         GraphQLString: { type: GraphQLNonNull(GraphQLString) }
       },
+      // Process the Mutation
       resolve: (parent, args) => {
         // Construct a new object with args
         const object = {
@@ -44,6 +52,7 @@ const RootMutationType = new GraphQLObjectType({
     updateObject: {
       type: ObjectType,
       description: 'Update an object by ID',
+      // Required input arguments wrapped with GraphQLNonNull
       args: {
         GraphQLID: { type: GraphQLNonNull(GraphQLInt) },
         GraphQLBoolean: { type: GraphQLBoolean },
@@ -51,6 +60,7 @@ const RootMutationType = new GraphQLObjectType({
         GraphQLInt: { type: GraphQLInt },
         GraphQLString: { type: GraphQLString }
       },
+      // Process the Mutation
       resolve: (parent, args) => {
         // Find the object in Data
         const filteredObject = Data.find(
@@ -92,9 +102,11 @@ const RootMutationType = new GraphQLObjectType({
     deleteObject: {
       type: ObjectType,
       description: 'Delete an object by ID',
+      // Required input arguments wrapped with GraphQLNonNull
       args: {
         GraphQLID: { type: GraphQLNonNull(GraphQLInt) }
       },
+      // Process the Mutation
       resolve: (parent, args) => {
         // Find the object in Data
         const filteredObject = Data.find(
