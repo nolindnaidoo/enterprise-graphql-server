@@ -8,7 +8,7 @@ import {
 } from 'graphql';
 
 const ObjectType = new GraphQLObjectType({
-  name: 'objects',
+  name: 'ObjectType',
   description: 'Definition of ObjectType',
   fields: () => ({
     GraphQLBoolean: { type: GraphQLBoolean },

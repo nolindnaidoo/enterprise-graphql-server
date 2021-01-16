@@ -10,13 +10,13 @@ describe('Query: objects', () => {
     request(url)
       .post(endpoint)
       .send({
-        query: `{ objects { GraphQLBoolean GraphQLFloat GraphQLID GraphQLInt GraphQLString } }`
+        query: `{ getObjects { GraphQLBoolean GraphQLFloat GraphQLID GraphQLInt GraphQLString } }`
       })
       .expect(200)
       .end((err, res) => {
         if (err) return done(err);
         chai.expect(res.body.data).to.deep.equal({
-          objects: [
+          getObjects: [
             {
               GraphQLBoolean: true,
               GraphQLFloat: 0,
@@ -43,13 +43,13 @@ describe('Query: object', () => {
     request(url)
       .post(endpoint)
       .send({
-        query: `{ object(GraphQLID: 0) { GraphQLBoolean GraphQLFloat GraphQLID GraphQLInt GraphQLString } }`
+        query: `{ getObject(GraphQLID: 0) { GraphQLBoolean GraphQLFloat GraphQLID GraphQLInt GraphQLString } }`
       })
       .expect(200)
       .end((err, res) => {
         if (err) return done(err);
         chai.expect(res.body.data).to.deep.equal({
-          object: {
+          getObject: {
             GraphQLBoolean: true,
             GraphQLFloat: 0,
             GraphQLID: '0',

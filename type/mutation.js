@@ -11,7 +11,7 @@ import Data from '../data/mockData.js';
 
 const RootMutationType = new GraphQLObjectType({
   name: 'RootMutation',
-  description: 'Definition of RootMutationType',
+  description: 'List of available Mutations',
   fields: () => ({
     addObject: {
       type: ObjectType,

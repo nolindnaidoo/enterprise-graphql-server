@@ -4,9 +4,9 @@ import Data from '../data/mockData.js';
 
 const RootQueryType = new GraphQLObjectType({
   name: 'RootQuery',
-  description: 'Definition of RooQueryType',
+  description: 'List of available Queries',
   fields: () => ({
-    object: {
+    getObject: {
       type: ObjectType,
       description: 'GET an Object',
       args: {
@@ -16,7 +16,7 @@ const RootQueryType = new GraphQLObjectType({
         // Find the object by GraphQLID
         Data.find((data) => data.GraphQLID === args.GraphQLID)
     },
-    objects: {
+    getObjects: {
       type: new GraphQLList(ObjectType),
       description: 'GET all objects',
       resolve: () =>
