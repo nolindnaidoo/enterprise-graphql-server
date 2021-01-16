@@ -13,12 +13,15 @@ const RootQueryType = new GraphQLObjectType({
         GraphQLID: { type: GraphQLInt }
       },
       resolve: (parent, args) =>
+        // Find the object by GraphQLID
         Data.find((data) => data.GraphQLID === args.GraphQLID)
     },
     objects: {
       type: new GraphQLList(ObjectType),
       description: 'GET all objects',
-      resolve: () => Data
+      resolve: () =>
+        // Return all objects from Data
+        Data
     }
   })
 });
