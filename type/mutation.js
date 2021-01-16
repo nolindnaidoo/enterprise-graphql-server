@@ -11,7 +11,7 @@ import Data from '../data/mockData.js';
 
 const RootMutationType = new GraphQLObjectType({
   name: 'RootMutation',
-  description: 'Root Mutation',
+  description: 'Definition of RootMutationType',
   fields: () => ({
     addObject: {
       type: ObjectType,
@@ -92,11 +92,7 @@ const RootMutationType = new GraphQLObjectType({
 
         Data.splice(index, 1);
 
-        const object = {
-          GraphQLID: filteredObject.GraphQLID
-        };
-
-        return object;
+        return filteredObject;
       }
     }
   })

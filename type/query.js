@@ -4,7 +4,7 @@ import Data from '../data/mockData.js';
 
 const RootQueryType = new GraphQLObjectType({
   name: 'RootQuery',
-  description: 'Root Query',
+  description: 'Definition of RooQueryType',
   fields: () => ({
     object: {
       type: ObjectType,
