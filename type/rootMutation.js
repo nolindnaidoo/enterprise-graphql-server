@@ -7,18 +7,18 @@ import {
   GraphQLString
 } from 'graphql';
 import ObjectType from './object.js';
-import Data from '../data/mockData.js';
+import Data from '../data/jsonData.js';
 
 /**
- * [RootMutationType]
+ * [Defne Root Mutation]
  * @param     {Object}  constructor
  * @property  {string}  name  - Name of the object
  * @property  {string}  description - Description of the object
  * @property  {object}  fields  - The fields/properties of the object
  */
 const RootMutationType = new GraphQLObjectType({
-  name: 'RootMutation',
-  description: 'List of available Mutations',
+  name: 'RootMutationType',
+  description: 'Root Mutation Type',
   fields: () => ({
     addObject: {
       type: ObjectType,

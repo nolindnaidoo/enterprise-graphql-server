@@ -5,23 +5,23 @@ import {
   GraphQLObjectType
 } from 'graphql';
 import ObjectType from './object.js';
-import Data from '../data/mockData.js';
+import Data from '../data/jsonData.js';
 
 /**
- * [Define RootQueryType]
+ * [Define Root Query Type]
  * @param     {Object}  constructor
  * @property  {string}  name  - Name of the object
  * @property  {string}  description - Description of the object
  * @property  {object}  fields  - The fields/properties of the object
  */
 const RootQueryType = new GraphQLObjectType({
-  name: 'RootQuery',
-  description: 'List of available Queries',
+  name: 'RootQueryType',
+  description: 'Root Query Type',
   fields: () => ({
     getObject: {
       type: ObjectType,
       description: 'Return an object by ID',
-      // Required input arguments wrapped with GraphQLNonNull
+      // Required input arguments wrapped with GraphQLNonNul
       args: {
         GraphQLID: { type: GraphQLNonNull(GraphQLInt) }
       },

@@ -5,7 +5,7 @@ import RootQueryType from '../type/rootQuery.js';
 import RootMutationType from '../type/rootMutation.js';
 
 /**
- * [GraphQL Schema]
+ * [Define GraphQL Schema]
  * @param     {Object}  constructor
  * @property  {Object}  query  - Define the Root Query Schema
  * @property  {Object}  mutation - Define the Root Mutation Schema
