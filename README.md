@@ -34,7 +34,7 @@ Server is deployed at http://localhost:3001/graphql
 #### GraphiQL with queries
 
 ```
-http://localhost:3001/graphql?query=%0A%23%20Query%3A%20get%20all%20objects%0A%23%20%7B%0A%23%20%20%20getObjects%20%7B%0A%23%20%20%20%20%20GraphQLBoolean%0A%23%20%20%20%20%20GraphQLFloat%0A%23%20%20%20%20%20GraphQLID%0A%23%20%20%20%20%20GraphQLInt%0A%23%20%20%20%20%20GraphQLString%0A%23%20%20%20%7D%0A%23%20%7D%0A%0A%23%20Query%3A%20get%20a%20single%20object%0A%23%20%7B%0A%23%20%20%20getObject(GraphQLID%3A%201)%20%7B%0A%23%20%20%20%20%20GraphQLBoolean%0A%23%20%20%20%20%20GraphQLFloat%0A%23%20%20%20%20%20GraphQLID%0A%23%20%20%20%20%20GraphQLInt%0A%23%20%20%20%20%20GraphQLString%0A%23%20%20%20%7D%0A%23%20%7D%0A%0A%23%20Mutation%3A%20Add%20a%20single%20object%20by%20ID%0A%23%20mutation%20%7B%0A%23%20%20%20addObject(%20GraphQLBoolean%3A%20true%2C%20GraphQLFloat%3A%202%2C%20GraphQLID%3A%202%2C%20GraphQLInt%3A%202%2C%20GraphQLString%3A%20%22Object%202%22)%20%7B%0A%23%20%20%20%20%20GraphQLBoolean%0A%23%20%20%20%20%20GraphQLFloat%0A%23%20%20%20%20%20GraphQLID%0A%23%20%20%20%20%20GraphQLInt%0A%23%20%20%20%20%20GraphQLString%0A%23%20%20%20%7D%0A%23%20%7D%0A%0A%23%20Mutation%3A%20Update%20a%20single%20object%20by%20ID%0A%23%20mutation%20%7B%0A%23%20%20%20updateObject(GraphQLID%3A%202%2C%20GraphQLBoolean%3A%20false)%20%7B%0A%23%20%20%20%20%20GraphQLBoolean%0A%23%20%20%20%20%20GraphQLFloat%0A%23%20%09%09GraphQLID%0A%23%20%20%20%20%20GraphQLInt%0A%23%20%20%20%20%20GraphQLString%0A%23%20%20%20%7D%0A%23%20%7D%0A%0A%23%20Mutation%3A%20Delete%20a%20single%20object%20by%20ID%0A%23%20mutation%20%7B%0A%23%20%20%20deleteObject(GraphQLID%3A%202)%20%7B%0A%23%20%20%20%20%20GraphQLBoolean%0A%23%20%20%20%20%20GraphQLFloat%0A%23%20%20%20%20%20GraphQLID%0A%23%20%20%20%20%20GraphQLInt%0A%23%20%20%20%20%20GraphQLString%0A%23%20%20%20%7D%0A%23%20%7D
+http://localhost:3001/graphql?query=%0A%23%20Query%3A%20get%20all%20objects%0A%23%20query%20%7B%0A%23%20%20%20getObjects%20%7B%0A%23%20%20%20%20%20GraphQLBoolean%0A%23%20%20%20%20%20GraphQLFloat%0A%23%20%20%20%20%20GraphQLID%0A%23%20%20%20%20%20GraphQLInt%0A%23%20%20%20%20%20GraphQLString%0A%23%20%20%20%7D%0A%23%20%7D%0A%0A%23%20Query%3A%20get%20a%20single%20object%0A%23%20query%20%7B%0A%23%20%20%20getObject(GraphQLID%3A%201)%20%7B%0A%23%20%20%20%20%20GraphQLBoolean%0A%23%20%20%20%20%20GraphQLFloat%0A%23%20%20%20%20%20GraphQLID%0A%23%20%20%20%20%20GraphQLInt%0A%23%20%20%20%20%20GraphQLString%0A%23%20%20%20%7D%0A%23%20%7D%0A%0A%23%20Mutation%3A%20Add%20a%20single%20object%20by%20ID%0A%23%20mutation%20%7B%0A%23%20%20%20addObject(%20GraphQLBoolean%3A%20true%2C%20GraphQLFloat%3A%202%2C%20GraphQLID%3A%202%2C%20GraphQLInt%3A%202%2C%20GraphQLString%3A%20%22Object%202%22)%20%7B%0A%23%20%20%20%20%20GraphQLBoolean%0A%23%20%20%20%20%20GraphQLFloat%0A%23%20%20%20%20%20GraphQLID%0A%23%20%20%20%20%20GraphQLInt%0A%23%20%20%20%20%20GraphQLString%0A%23%20%20%20%7D%0A%23%20%7D%0A%0A%23%20Mutation%3A%20Update%20a%20single%20object%20by%20ID%0A%23%20mutation%20%7B%0A%23%20%20%20updateObject(GraphQLID%3A%202%2C%20GraphQLBoolean%3A%20false)%20%7B%0A%23%20%20%20%20%20GraphQLBoolean%0A%23%20%20%20%20%20GraphQLFloat%0A%23%20%09%09GraphQLID%0A%23%20%20%20%20%20GraphQLInt%0A%23%20%20%20%20%20GraphQLString%0A%23%20%20%20%7D%0A%23%20%7D%0A%0A%23%20Mutation%3A%20Delete%20a%20single%20object%20by%20ID%0A%23%20mutation%20%7B%0A%23%20%20%20deleteObject(GraphQLID%3A%202)%20%7B%0A%23%20%20%20%20%20GraphQLBoolean%0A%23%20%20%20%20%20GraphQLFloat%0A%23%20%20%20%20%20GraphQLID%0A%23%20%20%20%20%20GraphQLInt%0A%23%20%20%20%20%20GraphQLString%0A%23%20%20%20%7D%0A%23%20%7D
 ```
 
 #### Query: getObjects
@@ -42,7 +42,7 @@ http://localhost:3001/graphql?query=%0A%23%20Query%3A%20get%20all%20objects%0A%2
 ##### Return all objects
 
 ```
-{
+query {
   getObjects {
     GraphQLBoolean
     GraphQLFloat
@@ -58,7 +58,7 @@ http://localhost:3001/graphql?query=%0A%23%20Query%3A%20get%20all%20objects%0A%2
 ##### Return an object by ID
 
 ```
-{
+query {
   getObject(GraphQLID: 0) {
     GraphQLBoolean
     GraphQLFloat
